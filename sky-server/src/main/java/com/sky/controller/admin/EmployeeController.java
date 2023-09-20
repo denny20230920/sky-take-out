@@ -60,7 +60,7 @@ public class EmployeeController {
 
 
         //数据返回成功
-        log.info(employeeLoginVO.toString()+""+employee);
+        log.info(employeeLoginVO.toString());
 
         return Result.success(employeeLoginVO);
     }
