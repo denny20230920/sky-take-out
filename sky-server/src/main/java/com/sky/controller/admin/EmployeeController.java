@@ -71,4 +71,10 @@ public class EmployeeController {
         return Result.success();
     }
 
+    @PostMapping
+    public Result<Boolean> addEmployee(@RequestBody Employee employee){
+
+        return new Result<>();
+    }
+
 }
