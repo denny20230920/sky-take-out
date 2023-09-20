@@ -39,8 +39,8 @@ public class EmployeeController {
      */
     @PostMapping("/login")
     public Result<EmployeeLoginVO> login(@RequestBody EmployeeLoginDTO employeeLoginDTO) {
-        log.info("员工登录：{}", employeeLoginDTO);
-
+        log.info("员工登录：{}", employeeLoginDTO+",员工请求信息为："+employeeLoginDTO);
+	
         Employee employee = employeeService.login(employeeLoginDTO);
 
         //登录成功后，生成jwt令牌
@@ -57,6 +57,10 @@ public class EmployeeController {
                 .name(employee.getName())
                 .token(token)
                 .build();
+
+
+        //数据返回成功
+        log.info(employeeLoginVO.toString());
 
         return Result.success(employeeLoginVO);
     }
